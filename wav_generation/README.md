@@ -1,0 +1,24 @@
+# GenWav
+# GenWav
+1、python split.py --xls_file XLS_FILE
+  --split_key SPLIT_KEY
+  --freq_num FREQ_NUM
+  --split_internal SPLIT_INTERNAL
+  --rir_dir RIR_DIR
+  --output_dir OUTPUT_DIR
+  --gen_convwav_shell GEN_CONVWAV_SHELL
+  
+  
+ 注： --xls_file 真值的xls文件路径  --split_key 不用管  --freq_num 14（500Hz对应14，1khz对应17，20 对应 2k） --split_internal 0.1  --rir_dir RIR的路径  --output_dir 输出的文件夹路径  --gen_convwav_shell 输出shell脚本路径
+  例：python split.py  --xls_file process_chart/0403_500Hz_old_data.xlsx  --freq_num 14  --output_dir 0403_500Hz_old  --gen_convwav_shell 0403_500Hz_old/old_conv.sh
+  
+  
+  2、cd 到wav_generation路径下
+
+  3、运行  1 生成的gen_convwav_shell路径
+   例：sh 0403_500Hz_old/old_conv.sh
+   
+   
+## 一些坑
+option.py三行奇怪的东西删除掉，否则报错
+option.py最后三行需要检查路径是否存在
